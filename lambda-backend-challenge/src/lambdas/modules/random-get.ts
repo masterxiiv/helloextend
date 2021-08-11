@@ -1,18 +1,6 @@
 import fetch from 'node-fetch'
-import { Response } from './types'
-
-interface RandomResponse extends Response {
-  body: RandomDog
-}
-
-interface ErrorResponse extends Response {
-  message: string
-}
-
-interface RandomDog {
-  message: string
-  status: string
-}
+import { RandomResponse, ErrorResponse } from '../interfaces/response-types'
+import { RandomDog } from '../interfaces/random-dog'
 
 export async function handler(): Promise<RandomResponse | ErrorResponse> {
   try {

@@ -1,18 +1,6 @@
 import fetch from 'node-fetch'
-import { Response } from './types'
-
-interface BreedListsResponse extends Response {
-    body: BreedsList
-}
-
-interface ErrorResponse extends Response {
-    message: string
-}
-
-interface BreedsList {
-    message: string
-    status: string
-}
+import { BreedListsResponse, ErrorResponse } from '../interfaces/response-types'
+import { BreedsList } from '../interfaces/breeds-list'
 
 export async function handler(): Promise<BreedListsResponse | ErrorResponse> {
     try {
