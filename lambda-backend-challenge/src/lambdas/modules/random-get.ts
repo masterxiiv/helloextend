@@ -1,8 +1,8 @@
 import fetch from 'node-fetch'
-import { RandomResponse, ErrorResponse } from '../interfaces/response-types'
+import { RandomDogResponse, ErrorResponse } from '../interfaces/response-types'
 import { RandomDog } from '../interfaces/random-dog'
 
-export async function handler(): Promise<RandomResponse | ErrorResponse> {
+export async function handler(): Promise<RandomDogResponse | ErrorResponse> {
   try {
     const res = await fetch('https://dog.ceo/api/breeds/image/random')
     const payload: RandomDog = await res.json()

@@ -1,5 +1,8 @@
+// export interface Breeds {
+//   name: string
+//   sub_breeds: string[]
+// }
 
-export interface BreedsList {
-  message: string
-  status: string
-}
+// export interface BreedsList {
+//   breed: string[]
+// }
