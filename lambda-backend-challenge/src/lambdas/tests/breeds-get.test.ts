@@ -23,9 +23,13 @@ describe('breeds-get happy path', () => {
 })
 
 describe('breeds-get timeout', () => {
-  const mockResult = { statusCode: 500, message: 'An unknown error occurred: timeout' }
+  const mockResult = { statusCode: 500, message: 'An error occurred fetching data: timeout' }
   beforeEach(() => {
-    mockedFetch.mockRejectedValueOnce(new Error('timeout'))
+    mockedFetch.mockReturnValueOnce({
+      json: () => {
+        setTimeout(() => { return 'timeout' }, 2500)
+      },
+    })
   })
 
   it('returns an error message', async () => {

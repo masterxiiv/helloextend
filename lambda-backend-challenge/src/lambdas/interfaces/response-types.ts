@@ -1,4 +1,5 @@
 // types for http responses
+import { DictionaryArray } from './dictionary-array'
 
 export interface Response {
   statusCode: number
@@ -20,6 +21,6 @@ export interface BreedListsResponse extends Response {
 }
 
 export interface BreedsResponse {
-  message: Array<string[]>
+  message: DictionaryArray // Array<string[]>
   status: string
 }
