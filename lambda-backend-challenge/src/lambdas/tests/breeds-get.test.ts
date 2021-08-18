@@ -27,7 +27,9 @@ describe('breeds-get timeout', () => {
   beforeEach(() => {
     mockedFetch.mockReturnValueOnce({
       json: () => {
-        setTimeout(() => { return 'timeout' }, 2500)
+        setTimeout(() => {
+          return 'timeout'
+        }, 2500)
       },
     })
   })
