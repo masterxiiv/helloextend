@@ -23,15 +23,9 @@ describe('breeds-get happy path', () => {
 })
 
 describe('breeds-get timeout', () => {
-  const mockResult = { statusCode: 500, message: 'An error occurred fetching data: timeout' }
+  const mockResult = { statusCode: 408, message: 'Request timeout exceeded: timeout' }
   beforeEach(() => {
-    mockedFetch.mockReturnValueOnce({
-      json: () => {
-        setTimeout(() => {
-          return 'timeout'
-        }, 2500)
-      },
-    })
+    mockedFetch.mockRejectedValueOnce({ name: 'AbortError', message: 'timeout' })
   })
 
   it('returns an error message', async () => {
