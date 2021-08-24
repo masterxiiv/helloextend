@@ -51,7 +51,7 @@ This is bare-bones version of our backend codebase, where we ask candidates to m
 
 Follow these steps to create a new API endpoint in this codebase:
 
-- create a new branch from `master`.
+- create a new branch from `main`.
 
 - use this [public endpoint](https://dog.ceo/api/breeds/list/all) to pull breeds of dogs
 
